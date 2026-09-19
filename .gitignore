@@ -2,6 +2,7 @@
 .vscode/
 .DS_Store
 *.log
+.telegram/
 
 # Python backend runtime
 backend/__pycache__/
@@ -20,3 +21,6 @@ frontend/.vite/
 # Local environment files
 .env
 .env.*
+
+# Local-only notes
+기본설정.md
