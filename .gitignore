@@ -1,0 +1,22 @@
+# Global project files
+.vscode/
+.DS_Store
+*.log
+
+# Python backend runtime
+backend/__pycache__/
+backend/**/*.py[cod]
+backend/.venv/
+backend/venv/
+backend/uploads/
+backend/uploads_old/
+backend/.pytest_cache/
+
+# Frontend runtime
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Local environment files
+.env
+.env.*

@@ -1,0 +1,61 @@
+.calendar-layout{
+    display:flex;
+    gap:24px;
+}
+
+.calendar-main{
+    flex:3;
+}
+
+.calendar-side{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:12px;
+}
+
+.calendar-head{
+    text-align:center;
+    font-weight:bold;
+}
+
+.calendar-cell{
+    min-height:120px;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+.calendar-cell.active{
+    border:2px solid #1976d2;
+    background:#eef5ff;
+}
+
+.dividend-badge{
+    margin-top:6px;
+    padding:4px 8px;
+    border-radius:8px;
+    background:#1976d2;
+    color:white;
+    font-size:12px;
+}
+
+.side-item{
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.calendar-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}

@@ -1,0 +1,11 @@
+# Python runtime
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local app data
+uploads/
+uploads_old/
+*.db

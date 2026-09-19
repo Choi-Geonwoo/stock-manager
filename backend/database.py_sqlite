@@ -1,0 +1,30 @@
+import os
+import sqlite3
+from datetime import datetime
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB = os.path.join(BASE_DIR, "./db/test_20260614.db")
+
+
+# SQL 로그를 출력할 인터셉터 함수 정의
+def sql_logger_callback(sql_statement):
+    # 우리가 계속 맞춰온 (YYYYMMDD_HHMMSS_SSS) 형식 적용
+    now = datetime.now()
+    timestamp = f"({now.strftime('%Y%m%d_%H%M%S')}_{str(now.microsecond)[:3]})"
+
+    # 가독성을 위해 SQL 구문 내 줄바꿈이나 공백을 보기 좋게 정리
+    clean_sql = " ".join(sql_statement.split())
+
+    # 단, 트랜잭션 시작/종료 관련 반복 로그(BEGIN, COMMIT)는 너무 자주 찍히므로
+    # 취향에 따라 무시하거나 다르게 처리할 수 있습니다.
+    if clean_sql:
+        print(f"[{timestamp}] [SQL] {clean_sql}")
+
+
+def get_conn():
+    conn = sqlite3.connect(DB)
+
+    # 💡 이 한 줄을 추가하면, 이 커넥션으로 실행되는 모든 SQL이 추적됩니다.
+    conn.set_trace_callback(sql_logger_callback)
+
+    return conn

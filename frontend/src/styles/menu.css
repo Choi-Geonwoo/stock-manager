@@ -1,0 +1,56 @@
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #f8f9fa;
+}
+
+/* ==========================================================================
+   Google Material 3 Navigation Drawer (Dark)
+   ========================================================================== */
+.menu {
+    width: 230px;
+    min-width: 230px;
+    min-height: 100vh;
+    background: #1e1f20;
+    color: #e3e3e3;
+    padding: 24px 12px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.menu h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #909090;
+    padding: 0 16px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    color: #c4c7c5;
+    text-decoration: none;
+    padding: 0 24px;
+    height: 56px;
+    border-radius: 100px; /* 완전 둥근 알약 모양 */
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* 다크모드 호버 효과 */
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+}
+
+/* 다크모드 활성화된 메뉴(Active) 스타일 예시 */
+.menu-item.active {
+    background: #004a77; /* 구글 다크 테마 포인트 블루 */
+    color: #c2e7ff;
+    font-weight: 700;
+}
